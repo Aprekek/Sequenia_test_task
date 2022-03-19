@@ -8,4 +8,6 @@ dependencies {
 	implementation Dependencies.RETROFIT
 	implementation Dependencies.RETROFIT_MOSHI
 	implementation Dependencies.MOSHI
+	implementation Dependencies.LOGGING_INTERCEPTOR
+	implementation Dependencies.KOIN_CORE
 }

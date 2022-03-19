@@ -10,4 +10,5 @@ dependencies {
 	implementation Dependencies.CICERONE
 
 	implementation project(":shared:themes")
+	implementation project(":shared:network")
 }

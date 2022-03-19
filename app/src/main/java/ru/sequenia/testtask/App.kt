@@ -4,6 +4,7 @@ import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import ru.sequenia.testtask.di.globalNavigationModule
+import ru.sequenia.testtask.network.di.networkModule
 
 class App : Application() {
 
@@ -15,6 +16,7 @@ class App : Application() {
 
 			modules(
 				globalNavigationModule,
+				networkModule,
 			)
 		}
 	}
