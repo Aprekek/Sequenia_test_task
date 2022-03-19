@@ -7,4 +7,5 @@ dependencies {
 
 	implementation Dependencies.MATERIAL
 	implementation Dependencies.KOIN_ANDROID
+	implementation Dependencies.CICERONE
 }
