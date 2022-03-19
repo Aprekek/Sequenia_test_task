@@ -6,4 +6,5 @@ apply from: "$rootDir/build_system/androidLibrary.gradle"
 dependencies {
 
 	implementation Dependencies.FRAGMENT
+	implementation Dependencies.LIFECYCLE_RUNTIME
 }
