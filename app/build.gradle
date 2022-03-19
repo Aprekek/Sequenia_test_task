@@ -6,4 +6,5 @@ apply from: "$rootDir/build_system/androidApplication.gradle"
 dependencies {
 
 	implementation Dependencies.MATERIAL
+	implementation Dependencies.KOIN_ANDROID
 }
