@@ -15,6 +15,7 @@ ext.Dependencies = [
 	RETROFIT               : "com.squareup.retrofit2:retrofit:${Versions.RETROFIT}",
 	RETROFIT_MOSHI         : "com.squareup.retrofit2:converter-moshi:${Versions.RETROFIT}",
 	MOSHI                  : "com.squareup.moshi:moshi-kotlin:${Versions.MOSHI}",
+	LOGGING_INTERCEPTOR    : "com.squareup.okhttp3:logging-interceptor:${Versions.LOGGING_INTERCEPTOR}",
 
 	MATERIAL               : "com.google.android.material:material:${Versions.MATERIAL}",
 	ANDROIDX_CORE          : "androidx.core:core-ktx:${Versions.ANDROIDX_CORE}",
