@@ -21,7 +21,7 @@ ext.Dependencies = [
 	ANDROIDX_CORE          : "androidx.core:core-ktx:${Versions.ANDROIDX_CORE}",
 	APP_COMPAT             : "androidx.appcompat:appcompat:${Versions.APP_COMPAT}",
 	CONSTRAINT_LAYOUT      : "androidx.constraintlayout:constraintlayout:${Versions.CONSTRAINT_LAYOUT}",
-	RECUCLER_VIEW          : "androidx.recyclerview:recyclerview:${Versions.RECYCLER_VIEW}",
+	RECYCLER_VIEW          : "androidx.recyclerview:recyclerview:${Versions.RECYCLER_VIEW}",
 
 	CICERONE               : "com.github.terrakok:cicerone:${Versions.CICERONE}",
 	FRAGMENT               : "androidx.fragment:fragment-ktx:${Versions.FRAGMENT}",
