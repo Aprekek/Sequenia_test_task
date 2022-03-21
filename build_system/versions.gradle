@@ -15,5 +15,6 @@ ext.Versions = [
 	CICERONE           : "7.1",
 	GLIDE              : "4.13.1",
 	RECYCLER_VIEW      : "1.2.1",
-	LOGGING_INTERCEPTOR: "4.9.3"
+	LOGGING_INTERCEPTOR: "4.9.3",
+	ROOM               : "2.4.1",
 ]
