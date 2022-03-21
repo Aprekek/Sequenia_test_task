@@ -9,4 +9,5 @@ dependencies {
 	implementation Dependencies.ROOM_RUNTIME
 	kapt Dependencies.ROOM_COMPILER
 	implementation Dependencies.ROOM_KTX
+	implementation Dependencies.KOIN_ANDROID
 }

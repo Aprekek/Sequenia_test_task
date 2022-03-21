@@ -11,4 +11,5 @@ dependencies {
 
 	implementation project(":shared:themes")
 	implementation project(":shared:network")
+	implementation project(":shared:database")
 }
