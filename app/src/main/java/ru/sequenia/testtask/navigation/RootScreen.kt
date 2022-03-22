@@ -1,7 +1,5 @@
 package ru.sequenia.testtask.navigation
 
-import com.github.terrakok.cicerone.Screen
+import ru.sequenia.testtask.features.films.general.presentation.screen.getFilmsGeneralScreen
 
-fun provideRootScreen(): Screen {
-	TODO()
-}
+fun provideRootScreen() = getFilmsGeneralScreen()

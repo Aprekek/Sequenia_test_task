@@ -34,4 +34,8 @@ class KeyGenerator(
 	fun saveKey() {
 		sharedPreferences.edit().putLong(KEY_TAG, key.get()).apply()
 	}
+
+	fun reset() {
+		key.set(0L)
+	}
 }
