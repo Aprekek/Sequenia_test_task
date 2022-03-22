@@ -26,4 +26,8 @@ ext.Dependencies = [
 	CICERONE               : "com.github.terrakok:cicerone:${Versions.CICERONE}",
 	FRAGMENT               : "androidx.fragment:fragment-ktx:${Versions.FRAGMENT}",
 	GLIDE                  : "com.github.bumptech.glide:glide:${Versions.GLIDE}",
+
+	ROOM_RUNTIME           : "androidx.room:room-runtime:${Versions.ROOM}",
+	ROOM_COMPILER          : "androidx.room:room-compiler:${Versions.ROOM}",
+	ROOM_KTX               : "androidx.room:room-ktx:${Versions.ROOM}",
 ]
