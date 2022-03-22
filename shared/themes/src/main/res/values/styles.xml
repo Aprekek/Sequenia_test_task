@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<style name="Theme.Sequenia.Toolbar"
+		parent="Widget.MaterialComponents.Toolbar.PrimarySurface"/>
+
+	<style name="Theme.Sequenia.CardView"
+		parent="Widget.MaterialComponents.CardView">
+
+		<item name="cardCornerRadius">@dimen/medium_corner_radius</item>
+	</style>
+
+	<style name="Theme.Sequenia.DescriptionText">
+		<item name="android:textSize">@dimen/description_text_size</item>
+		<item name="android:textColor">?attr/colorOnSurface</item>
+	</style>
+</resources>

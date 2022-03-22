@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<com.google.android.material.appbar.MaterialToolbar
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:title="@string/general"
+		style="@style/Theme.Sequenia.Toolbar"/>
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<LinearLayout
+			android:id="@+id/loading_error_content"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:visibility="gone"
+			android:orientation="vertical"
+			tools:visibility="visible">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:text="@string/loading_error_message"
+				style="@style/Theme.Sequenia.DescriptionText"/>
+
+			<TextView
+				android:id="@+id/repeat_text"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:layout_marginTop="@dimen/medium_margin_padding"
+				android:clickable="true"
+				android:focusable="true"
+				android:textColor="@color/blue"
+				android:text="@string/retry"
+				style="@style/Theme.Sequenia.DescriptionText"/>
+		</LinearLayout>
+
+		<ProgressBar
+			android:id="@+id/progress_bar"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:visibility="gone"
+			android:layout_gravity="center"/>
+
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/recycler_view"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:visibility="visible"
+			tools:visibility="visible"/>
+	</FrameLayout>
+</LinearLayout>

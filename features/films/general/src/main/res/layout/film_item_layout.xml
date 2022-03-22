@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="@dimen/film_sheet_height"
+	android:layout_marginBottom="@dimen/small_margin_padding"
+	android:layout_marginEnd="@dimen/small_margin_padding"
+	style="@style/Theme.Sequenia.CardView">
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<ImageView
+			android:id="@+id/image"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:background="@color/grey"
+			tools:src="@color/black_transparent"/>
+
+		<TextView
+			android:id="@+id/title"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/film_sheet_description_height"
+			android:layout_gravity="bottom"
+			android:gravity="center"
+			android:maxLines="2"
+			android:ellipsize="end"
+			android:background="@color/black_transparent"
+			tools:text="Some DescriptionSome DescriptionSome DescriptionSome DescriptionSome DescriptionSome Description"
+			style="@style/Theme.Sequenia.FilmDescriptionText"/>
+	</FrameLayout>
+</com.google.android.material.card.MaterialCardView>
