@@ -1,5 +1,6 @@
 package ru.sequenia.testtask.features.films.general.di
 
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import ru.sequenia.testtask.features.films.general.data.api.FilmsApi
@@ -17,6 +18,7 @@ import ru.sequenia.testtask.features.films.general.domain.repository.FilmsReposi
 import ru.sequenia.testtask.features.films.general.domain.usecases.GetFilmsUseCase
 import ru.sequenia.testtask.features.films.general.domain.usecases.GetGenresUseCase
 import ru.sequenia.testtask.features.films.general.domain.usecases.UpdateFilmsDataUseCase
+import ru.sequenia.testtask.features.films.general.presentation.presenter.FilmsGeneralPresenter
 
 val filmsGeneralModule = module {
 
@@ -42,4 +44,13 @@ val filmsGeneralModule = module {
 	factory { UpdateFilmsDataUseCase(repository = get()) }
 	factory { GetFilmsUseCase(repository = get()) }
 	factory { GetGenresUseCase(repository = get()) }
+
+	viewModel {
+		FilmsGeneralPresenter(
+			router = get(),
+			updateFilmsDataUseCase = get(),
+			getFilmsUseCase = get(),
+			getGenresUseCase = get()
+		)
+	}
 }
