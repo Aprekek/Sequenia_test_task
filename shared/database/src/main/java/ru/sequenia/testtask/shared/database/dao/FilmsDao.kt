@@ -7,6 +7,7 @@ import androidx.room.Query
 import ru.sequenia.testtask.shared.database.dto.FilmAnnotationDto
 import ru.sequenia.testtask.shared.database.dto.FilmDto
 import ru.sequenia.testtask.shared.database.dto.FilmWithGenresDto
+import ru.sequenia.testtask.shared.database.dto.GenreWithFilmsDto
 
 @Dao
 interface FilmsDao {
@@ -20,12 +21,6 @@ interface FilmsDao {
 	@Query("SELECT filmId, localizedName, imageUrl FROM films_table ")
 	suspend fun getAll(): List<FilmAnnotationDto>
 
-	@Query(
-		"SELECT filmId, localizedName, imageUrl FROM films_table " +
-			"JOIN (SELECT genreId AS genre_id, filmId AS film_id" +
-			"		FROM genre_film_links_table " +
-			"		WHERE genre_Id = :genreId " +
-			") ON filmId = film_id "
-	)
-	suspend fun getAllWithFilter(genreId: Long): List<FilmAnnotationDto>
+	@Query("SELECT genreId FROM genre_table WHERE genreId = :genreId")
+	suspend fun getAllWithFilter(genreId: Long): GenreWithFilmsDto
 }
