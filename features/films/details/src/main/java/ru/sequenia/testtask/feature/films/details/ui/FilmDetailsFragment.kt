@@ -1,4 +1,4 @@
-package ru.sequenia.testtask.feature.films.details.presentation.ui
+package ru.sequenia.testtask.feature.films.details.ui
 
 import android.graphics.Typeface
 import android.os.Bundle
