@@ -1,13 +1,13 @@
-package ru.sequenia.testtask.shared.database.database
+package ru.sequenia.testtask.shared.films.data.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import ru.sequenia.testtask.shared.database.dao.FilmsDao
-import ru.sequenia.testtask.shared.database.dao.GenreDao
-import ru.sequenia.testtask.shared.database.dao.GenreFilmLinksDao
-import ru.sequenia.testtask.shared.database.dto.FilmDto
-import ru.sequenia.testtask.shared.database.dto.GenreDto
-import ru.sequenia.testtask.shared.database.dto.GenreFilmLinksDto
+import ru.sequenia.testtask.shared.films.data.dao.FilmsDao
+import ru.sequenia.testtask.shared.films.data.dao.GenreDao
+import ru.sequenia.testtask.shared.films.data.dao.GenreFilmLinksDao
+import ru.sequenia.testtask.shared.films.data.dto.FilmDto
+import ru.sequenia.testtask.shared.films.data.dto.GenreDto
+import ru.sequenia.testtask.shared.films.data.dto.GenreFilmLinksDto
 
 @Database(
 	entities = [

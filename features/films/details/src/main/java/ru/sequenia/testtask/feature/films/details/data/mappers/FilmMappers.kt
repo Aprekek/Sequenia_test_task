@@ -1,7 +1,7 @@
 package ru.sequenia.testtask.feature.films.details.data.mappers
 
 import ru.sequenia.testtask.feature.films.details.domain.entities.Film
-import ru.sequenia.testtask.shared.database.dto.FilmWithGenresDto
+import ru.sequenia.testtask.shared.films.data.dto.FilmWithGenresDto
 
 fun FilmWithGenresDto.toEntity() = with(filmDto) {
 	Film(

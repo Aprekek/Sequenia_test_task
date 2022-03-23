@@ -1,4 +1,4 @@
-package ru.sequenia.testtask.shared.database
+package ru.sequenia.testtask.shared.films.data
 
 import java.util.concurrent.atomic.AtomicLong
 

@@ -17,4 +17,5 @@ dependencies {
 	implementation project(":shared:core:presentation")
 	implementation project(":shared:database")
 	implementation project(":shared:themes")
+	implementation project(":shared:films")
 }

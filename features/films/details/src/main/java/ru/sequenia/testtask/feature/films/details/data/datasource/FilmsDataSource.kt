@@ -1,6 +1,6 @@
 package ru.sequenia.testtask.feature.films.details.data.datasource
 
-import ru.sequenia.testtask.shared.database.dto.FilmWithGenresDto
+import ru.sequenia.testtask.shared.films.data.dto.FilmWithGenresDto
 
 interface FilmsDataSource {
 

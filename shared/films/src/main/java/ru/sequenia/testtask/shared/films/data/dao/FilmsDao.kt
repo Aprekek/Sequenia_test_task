@@ -1,13 +1,13 @@
-package ru.sequenia.testtask.shared.database.dao
+package ru.sequenia.testtask.shared.films.data.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import ru.sequenia.testtask.shared.database.dto.FilmAnnotationDto
-import ru.sequenia.testtask.shared.database.dto.FilmDto
-import ru.sequenia.testtask.shared.database.dto.FilmWithGenresDto
-import ru.sequenia.testtask.shared.database.dto.GenreWithFilmsDto
+import ru.sequenia.testtask.shared.films.data.dto.FilmAnnotationDto
+import ru.sequenia.testtask.shared.films.data.dto.FilmDto
+import ru.sequenia.testtask.shared.films.data.dto.FilmWithGenresDto
+import ru.sequenia.testtask.shared.films.data.dto.GenreWithFilmsDto
 
 @Dao
 interface FilmsDao {

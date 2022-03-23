@@ -3,10 +3,10 @@ package ru.sequenia.testtask.features.films.general.data.mappers
 import ru.sequenia.testtask.features.films.general.data.models.FilmRemoteModel
 import ru.sequenia.testtask.features.films.general.data.models.FilmsInfoLocalModel
 import ru.sequenia.testtask.features.films.general.data.models.FilmsInfoRemoteModel
-import ru.sequenia.testtask.shared.database.KeyGenerator
-import ru.sequenia.testtask.shared.database.dto.FilmDto
-import ru.sequenia.testtask.shared.database.dto.GenreDto
-import ru.sequenia.testtask.shared.database.dto.GenreFilmLinksDto
+import ru.sequenia.testtask.shared.films.data.KeyGenerator
+import ru.sequenia.testtask.shared.films.data.dto.FilmDto
+import ru.sequenia.testtask.shared.films.data.dto.GenreDto
+import ru.sequenia.testtask.shared.films.data.dto.GenreFilmLinksDto
 
 class FilmsInfoMapper(
 	private val keyGenerator: KeyGenerator

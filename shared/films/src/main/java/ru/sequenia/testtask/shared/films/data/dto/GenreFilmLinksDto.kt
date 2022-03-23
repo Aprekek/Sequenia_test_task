@@ -1,4 +1,4 @@
-package ru.sequenia.testtask.shared.database.dto
+package ru.sequenia.testtask.shared.films.data.dto
 
 import androidx.room.Entity
 
