@@ -20,5 +20,5 @@ val databaseModule = module {
 	factory { get<FilmsDataBase>().genreDao() }
 	factory { get<FilmsDataBase>().genreFilmLinksDao() }
 
-	single { KeyGenerator(sharedPreferences = get()) }
+	factory { KeyGenerator() }
 }

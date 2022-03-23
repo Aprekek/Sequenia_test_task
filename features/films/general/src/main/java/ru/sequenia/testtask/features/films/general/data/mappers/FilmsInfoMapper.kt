@@ -28,8 +28,6 @@ class FilmsInfoMapper(
 			}
 		}
 
-		keyGenerator.reset()
-
 		return FilmsInfoLocalModel(
 			films = films,
 			genres = genres.map { GenreDto(genreId = it.value, genreName = it.key) },
