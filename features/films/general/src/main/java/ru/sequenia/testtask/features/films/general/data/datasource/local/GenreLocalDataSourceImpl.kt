@@ -1,7 +1,7 @@
 package ru.sequenia.testtask.features.films.general.data.datasource.local
 
-import ru.sequenia.testtask.shared.database.dao.GenreDao
-import ru.sequenia.testtask.shared.database.dto.GenreDto
+import ru.sequenia.testtask.shared.films.data.dao.GenreDao
+import ru.sequenia.testtask.shared.films.data.dto.GenreDto
 
 class GenreLocalDataSourceImpl(
 	private val dao: GenreDao

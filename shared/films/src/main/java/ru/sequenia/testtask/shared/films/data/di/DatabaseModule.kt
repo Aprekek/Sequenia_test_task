@@ -1,12 +1,12 @@
-package ru.sequenia.testtask.shared.database.di
+package ru.sequenia.testtask.shared.films.data.di
 
 import androidx.room.Room
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
-import ru.sequenia.testtask.shared.database.KeyGenerator
-import ru.sequenia.testtask.shared.database.database.FilmsDataBase
+import ru.sequenia.testtask.shared.films.data.KeyGenerator
+import ru.sequenia.testtask.shared.films.data.database.FilmsDataBase
 
-val databaseModule = module {
+val sharedFilmsModule = module {
 
 	single {
 		Room.databaseBuilder(

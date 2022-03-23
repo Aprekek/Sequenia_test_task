@@ -1,10 +1,10 @@
-package ru.sequenia.testtask.shared.database.dao
+package ru.sequenia.testtask.shared.films.data.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
-import ru.sequenia.testtask.shared.database.dto.GenreDto
+import ru.sequenia.testtask.shared.films.data.dto.GenreDto
 
 @Dao
 interface GenreDao {

@@ -1,5 +1,6 @@
-package ru.sequenia.testtask.shared.database.dto
+package ru.sequenia.testtask.shared.films.data.dto
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 
 @Entity(
@@ -8,5 +9,6 @@ import androidx.room.Entity
 )
 data class GenreFilmLinksDto(
 	val genreId: Long,
+	@ColumnInfo(index = true)
 	val filmId: Long
 )

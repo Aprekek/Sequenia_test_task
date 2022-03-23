@@ -1,8 +1,8 @@
 package ru.sequenia.testtask.features.films.general.data.datasource.local
 
-import ru.sequenia.testtask.shared.database.dto.FilmAnnotationDto
-import ru.sequenia.testtask.shared.database.dto.FilmDto
-import ru.sequenia.testtask.shared.database.dto.GenreWithFilmsDto
+import ru.sequenia.testtask.shared.films.data.dto.FilmAnnotationDto
+import ru.sequenia.testtask.shared.films.data.dto.FilmDto
+import ru.sequenia.testtask.shared.films.data.dto.GenreWithFilmsDto
 
 interface FilmsLocalDataSource {
 
