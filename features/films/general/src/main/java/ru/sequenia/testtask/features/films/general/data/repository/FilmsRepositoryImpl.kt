@@ -50,7 +50,7 @@ class FilmsRepositoryImpl : FilmsRepository {
 			if (genreFilter == null)
 				filmsLocalDataSource.getFilms().toEntitiesList()
 			else
-				filmsLocalDataSource.getFilms(genreFilter).toEntitiesList()
+				filmsLocalDataSource.getFilms(genreFilter).toEntitiesList().sortedBy { it.localizedName }
 		}
 
 	override suspend fun getGenres(): List<Genre> =

@@ -20,7 +20,7 @@ interface FilmsDao {
 	@Query("SELECT * FROM films_table WHERE filmId = :filmId")
 	suspend fun get(filmId: Long): FilmWithGenresDto
 
-	@Query("SELECT filmId, localizedName, imageUrl FROM films_table ")
+	@Query("SELECT filmId, localizedName, imageUrl FROM films_table ORDER BY localizedName")
 	suspend fun getAll(): List<FilmAnnotationDto>
 
 	@Transaction
