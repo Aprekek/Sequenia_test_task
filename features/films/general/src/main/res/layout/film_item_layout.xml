@@ -17,6 +17,8 @@
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:background="@color/grey"
+			android:adjustViewBounds="true"
+			android:scaleType="centerCrop"
 			tools:src="@color/black_transparent"/>
 
 		<TextView
