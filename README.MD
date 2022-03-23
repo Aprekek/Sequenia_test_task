@@ -1,5 +1,7 @@
 <h2> Тестовое задание для "Секвения" </h2>
 
+<h2>Apk находится в папке apk/</h2>
+
 <b>Примеры экранов:</b>
 
 <img src="images/film_details_screen.jpg" width="200"> <img src="images/general_screen_with_filters.jpg" width="200"> <img src="images/general_screen_no_filters.jpg" width="200">
