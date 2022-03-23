@@ -32,7 +32,7 @@ class FilmsInfoMapper(
 
 		return FilmsInfoLocalModel(
 			films = films,
-			genres = genres.map { GenreDto(genreId = it.value, name = it.key) },
+			genres = genres.map { GenreDto(genreId = it.value, genreName = it.key) },
 			links = links
 		)
 	}

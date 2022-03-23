@@ -7,5 +7,5 @@ import androidx.room.PrimaryKey
 data class GenreDto(
 	@PrimaryKey
 	val genreId: Long,
-	val name: String
+	val genreName: String
 )
