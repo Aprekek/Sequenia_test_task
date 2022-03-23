@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import ru.sequenia.testtask.features.films.general.domain.entities.FilmAnnotation
 import ru.sequenia.testtask.features.films.general.domain.usecases.GetFilmsUseCase
@@ -25,6 +26,7 @@ class FilmsGeneralPresenter(
 	private val eventsDispatcher = EventsDispatcher<FilmsGeneralContract.View>()
 	private val model: FilmsGeneralContract.Model = FilmsGeneralModel()
 	private var wasInitialized = false
+	private var filmsLoadingJob: Job? = null
 
 	private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
 		Log.d(this::class.qualifiedName, throwable.message.toString())
@@ -36,24 +38,22 @@ class FilmsGeneralPresenter(
 	}
 
 	override fun loadFilmsData() {
-		if (!wasInitialized) {
-			loadFilmsFirstTime()
-		} else {
+		eventsDispatcher.dispatchEvent { showLoading() }
+
+		if (wasInitialized) {
 			loadCachedFilms()
+		} else if (filmsLoadingJob == null) {
+			filmsLoadingJob = loadFilmsFirstTime()
 		}
 	}
 
-	private fun loadFilmsFirstTime() {
-		eventsDispatcher.dispatchEvent { showLoading() }
+	private fun loadFilmsFirstTime(): Job = viewModelScope.launch(coroutineExceptionHandler) {
+		updateFilmsDataUseCase()
+		model.films = getFilmsUseCase(model.genreFilter)
+		model.genres = getGenresUseCase().toUiModelList()
 
-		viewModelScope.launch(coroutineExceptionHandler) {
-			updateFilmsDataUseCase()
-			model.films = getFilmsUseCase(model.genreFilter)
-			model.genres = getGenresUseCase().toUiModelList()
-
-			wasInitialized = true
-			eventsDispatcher.dispatchEvent { showContent(model.genres, model.films) }
-		}
+		wasInitialized = true
+		eventsDispatcher.dispatchEvent { showContent(model.genres, model.films) }
 	}
 
 	private fun loadCachedFilms() {
