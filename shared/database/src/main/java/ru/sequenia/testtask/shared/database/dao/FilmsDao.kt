@@ -6,7 +6,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import ru.sequenia.testtask.shared.database.dto.FilmAnnotationDto
 import ru.sequenia.testtask.shared.database.dto.FilmDto
-import ru.sequenia.testtask.shared.database.dto.GenreDto
+import ru.sequenia.testtask.shared.database.dto.FilmWithGenresDto
 
 @Dao
 interface FilmsDao {
@@ -14,15 +14,8 @@ interface FilmsDao {
 	@Insert(onConflict = OnConflictStrategy.REPLACE)
 	suspend fun insert(films: List<FilmDto>)
 
-	@Query(
-		"SELECT films_table.*, genre_table.* FROM films_table " +
-			"JOIN (SELECT genreId AS genre_id, filmId AS film_id" +
-			"		FROM genre_film_links_table " +
-			"		WHERE filmId = :filmId) " +
-			"ON filmId = film_id " +
-			"JOIN genre_table ON genreId = genre_id "
-	)
-	suspend fun get(filmId: Long): Map<FilmDto, List<GenreDto>>
+	@Query("SELECT * FROM films_table WHERE filmId = :filmId")
+	suspend fun get(filmId: Long): FilmWithGenresDto
 
 	@Query("SELECT filmId, localizedName, imageUrl FROM films_table ")
 	suspend fun getAll(): List<FilmAnnotationDto>
