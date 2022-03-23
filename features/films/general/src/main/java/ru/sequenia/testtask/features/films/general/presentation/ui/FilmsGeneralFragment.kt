@@ -2,14 +2,19 @@ package ru.sequenia.testtask.features.films.general.presentation.ui
 
 import android.content.res.Configuration
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearSmoothScroller
 import com.bumptech.glide.Glide
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.sequenia.testtask.features.films.general.R
 import ru.sequenia.testtask.features.films.general.databinding.FilmsGeneralFragmentBinding
@@ -32,6 +37,9 @@ class FilmsGeneralFragment : BaseFragment<FilmsGeneralFragmentBinding>(), FilmsG
 
 		private const val SPAN_COUNT_PORTRAIT = 2
 		private const val SPAN_COUNT_LANDSCAPE = 4
+
+		private const val DELAY_TO_START_SCROLLING = 300L
+		private const val MILLISECONDS_PER_INCH = 40f
 	}
 
 	private val presenter: FilmsGeneralPresenter by viewModel()
@@ -46,6 +54,10 @@ class FilmsGeneralFragment : BaseFragment<FilmsGeneralFragmentBinding>(), FilmsG
 		object : LinearSmoothScroller(requireContext()) {
 			override fun getVerticalSnapPreference(): Int {
 				return SNAP_TO_START
+			}
+
+			override fun calculateSpeedPerPixel(displayMetrics: DisplayMetrics): Float {
+				return MILLISECONDS_PER_INCH / displayMetrics.densityDpi
 			}
 		}
 	}
@@ -132,16 +144,29 @@ class FilmsGeneralFragment : BaseFragment<FilmsGeneralFragmentBinding>(), FilmsG
 
 	private fun onGenreClickAction(genreId: Long) {
 		presenter.onGenreFilterSelect(genreId)
-		scroller.targetPosition = genresAdapter.itemCount + genresHeaderAdapter.itemCount
-		binding.recyclerView.layoutManager?.startSmoothScroll(scroller)
+		lifecycleScope.launch {
+			delay(DELAY_TO_START_SCROLLING)
+
+			scroller.targetPosition = genresAdapter.itemCount + genresHeaderAdapter.itemCount
+			binding.recyclerView.layoutManager?.startSmoothScroll(scroller)
+		}
 	}
 
 	private fun loadImageForItem(view: ImageView, url: String?) {
-		Glide.with(this)
-			.load(url)
-			.centerCrop()
-			.placeholder(ru.sequenia.testtask.shared.themes.R.drawable.ic_movie)
-			.into(view)
+		if (url != null) {
+			Glide.with(this)
+				.load(url)
+				.centerCrop()
+				.placeholder(ru.sequenia.testtask.shared.themes.R.drawable.ic_movie)
+				.into(view)
+		} else {
+			view.setImageDrawable(
+				ContextCompat.getDrawable(
+					requireContext(),
+					ru.sequenia.testtask.shared.themes.R.drawable.ic_movie
+				)
+			)
+		}
 	}
 
 	private fun onFilmClickAction(film: FilmAnnotation) {
