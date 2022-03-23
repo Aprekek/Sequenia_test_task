@@ -19,7 +19,6 @@ dependencies {
 	implementation Dependencies.RECYCLER_VIEW
 
 	implementation project(":shared:core:presentation")
-	implementation project(":shared:database")
 	implementation project(":shared:themes")
 	implementation project(":shared:films")
 }

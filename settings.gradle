@@ -2,7 +2,6 @@ rootProject.name = "Sequenia"
 include ':app'
 include ':shared:themes'
 include ':shared:network'
-include ':shared:database'
 include ':shared:core:presentation'
 include ':shared:films'
 include ':features:films:general'
