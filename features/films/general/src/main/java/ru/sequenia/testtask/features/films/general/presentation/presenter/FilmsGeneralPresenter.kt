@@ -63,7 +63,7 @@ class FilmsGeneralPresenter(
 	}
 
 	override fun onFilmSelect(film: FilmAnnotation) {
-		router.navigateToFilmDetailsScree()
+		router.navigateToFilmDetailsScreen(film.id)
 	}
 
 	override fun onGenreFilterSelect(genreFilter: Long) {
