@@ -11,4 +11,12 @@
 		<item name="android:textSize">16sp</item>
 		<item name="android:padding">@dimen/small_margin_padding</item>
 	</style>
+
+	<style name="Theme.Sequenia.GenreFilterCard"
+		parent="Theme.Sequenia.CardView">
+		<item name="android:checkable">true</item>
+		<item name="checkedIcon">@null</item>
+		<item name="cardBackgroundColor">@color/genre_background_color</item>
+		<item name="rippleColor">?attr/colorPrimary</item>
+	</style>
 </resources>
