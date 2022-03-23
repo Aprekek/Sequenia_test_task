@@ -28,7 +28,7 @@
 			android:maxLines="2"
 			android:ellipsize="end"
 			android:background="@color/black_transparent"
-			tools:text="Some DescriptionSome DescriptionSome DescriptionSome DescriptionSome DescriptionSome Description"
+			tools:text="Some DescriptionSome"
 			style="@style/Theme.Sequenia.FilmDescriptionText"/>
 	</FrameLayout>
 </com.google.android.material.card.MaterialCardView>
