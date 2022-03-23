@@ -47,7 +47,10 @@ class FilmsRepositoryImpl : FilmsRepository {
 
 	override suspend fun getFilms(genreFilter: Long?): List<FilmAnnotation> =
 		withContext(Dispatchers.IO) {
-			filmsLocalDataSource.getFilms(genreFilter).toEntitiesList()
+			if (genreFilter == null)
+				filmsLocalDataSource.getFilms().toEntitiesList()
+			else
+				filmsLocalDataSource.getFilms(genreFilter).toEntitiesList()
 		}
 
 	override suspend fun getGenres(): List<Genre> =
