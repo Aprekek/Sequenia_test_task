@@ -23,6 +23,7 @@ class App : Application() {
 				networkModule,
 				databaseModule,
 				filmsGeneralModule,
+				filmDetailsModule,
 			)
 		}
 	}

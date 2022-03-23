@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearSmoothScroller
@@ -146,7 +145,7 @@ class FilmsGeneralFragment : BaseFragment<FilmsGeneralFragmentBinding>(), FilmsG
 	}
 
 	private fun onFilmClickAction(film: FilmAnnotation) {
-		Toast.makeText(requireContext(), film.localizedName, Toast.LENGTH_SHORT).show()
+		presenter.onFilmSelect(film)
 	}
 
 	override fun showLoading() {
