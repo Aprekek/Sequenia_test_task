@@ -1,4 +1,4 @@
-package ru.sequenia.testtask.feature.films.details.presentation.ui
+package ru.sequenia.testtask.feature.films.details.ui
 
 import android.graphics.Typeface
 import android.os.Bundle
@@ -44,7 +44,7 @@ class FilmDetailsFragment : BaseFragment<FilmDetailsFragmentBinding>(), FilmDeta
 		initListeners()
 
 		presenter.onViewCreated(this)
-		presenter.getFilmData(requireArguments().filmIdArg)
+		presenter.onInitialized(requireArguments().filmIdArg)
 	}
 
 	private fun initListeners() {
