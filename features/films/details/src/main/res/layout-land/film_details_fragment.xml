@@ -50,17 +50,19 @@
 				android:visibility="gone"
 				android:text="@string/film_not_found"/>
 
-			<androidx.constraintlayout.widget.ConstraintLayout
+			<LinearLayout
 				android:id="@+id/general_film_info_layout"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:layout_gravity="top"
 				android:visibility="gone"
 				tools:visibility="visible">
 
 				<com.google.android.material.imageview.ShapeableImageView
 					android:id="@+id/image"
-					android:layout_width="@dimen/film_image_width"
-					android:layout_height="@dimen/film_image_height"
+					android:layout_width="180dp"
+					android:layout_height="270dp"
 					android:layout_marginStart="@dimen/medium_margin_padding"
 					android:background="@color/grey"
 					app:shapeAppearanceOverlay="@style/Theme.Sequenia.RoundedImage"
@@ -70,15 +72,14 @@
 
 				<LinearLayout
 					android:id="@+id/info_layout"
-					android:layout_width="0dp"
-					android:layout_height="0dp"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
 					android:layout_marginBottom="@dimen/small_margin_padding"
 					android:layout_marginHorizontal="@dimen/medium_margin_padding"
 					android:orientation="vertical"
 					app:layout_constraintEnd_toEndOf="parent"
 					app:layout_constraintStart_toEndOf="@id/image"
-					app:layout_constraintTop_toTopOf="parent"
-					app:layout_constraintBottom_toTopOf="@id/description">
+					app:layout_constraintTop_toTopOf="parent">
 
 					<TextView
 						android:id="@+id/original_name"
@@ -107,28 +108,20 @@
 					<TextView
 						android:id="@+id/genres"
 						android:layout_width="match_parent"
-						android:layout_height="wrap_content"
 						android:layout_marginTop="@dimen/small_margin_padding"
-						app:layout_constraintTop_toBottomOf="@+id/image"
-						app:layout_constraintStart_toStartOf="parent"
-						app:layout_constraintEnd_toEndOf="parent"
-						app:layout_constraintBottom_toTopOf="@id/description"
+						android:layout_height="wrap_content"
 						tools:text="Genres: drama, comedy, horror"
 						style="@style/Theme.Sequenia.DescriptionText"/>
-				</LinearLayout>
 
-				<TextView
-					android:id="@+id/description"
-					android:layout_width="match_parent"
-					android:layout_height="wrap_content"
-					android:layout_marginTop="@dimen/small_margin_padding"
-					app:layout_constraintTop_toBottomOf="@+id/image"
-					app:layout_constraintStart_toStartOf="parent"
-					app:layout_constraintEnd_toEndOf="parent"
-					app:layout_constraintBottom_toBottomOf="parent"
-					tools:text="Such a long description"
-					style="@style/Theme.Sequenia.DescriptionText"/>
-			</androidx.constraintlayout.widget.ConstraintLayout>
+					<TextView
+						android:id="@+id/description"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="@dimen/small_margin_padding"
+						tools:text="Such a long description"
+						style="@style/Theme.Sequenia.DescriptionText"/>
+				</LinearLayout>
+			</LinearLayout>
 		</FrameLayout>
 	</ScrollView>
 </LinearLayout>
