@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearSmoothScroller
@@ -137,11 +138,20 @@ class FilmsGeneralFragment : BaseFragment<FilmsGeneralFragmentBinding>(), FilmsG
 	}
 
 	private fun loadImageForItem(view: ImageView, url: String?) {
-		Glide.with(this)
-			.load(url)
-			.centerCrop()
-			.placeholder(ru.sequenia.testtask.shared.themes.R.drawable.ic_movie)
-			.into(view)
+		if (url != null) {
+			Glide.with(this)
+				.load(url)
+				.centerCrop()
+				.placeholder(ru.sequenia.testtask.shared.themes.R.drawable.ic_movie)
+				.into(view)
+		} else {
+			view.setImageDrawable(
+				ContextCompat.getDrawable(
+					requireContext(),
+					ru.sequenia.testtask.shared.themes.R.drawable.ic_movie
+				)
+			)
+		}
 	}
 
 	private fun onFilmClickAction(film: FilmAnnotation) {
