@@ -1,11 +1,12 @@
 package ru.sequenia.testtask.features.films.general.ui.adapters
 
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import ru.sequenia.testtask.features.films.general.ui.adapters.viewholders.HeaderViewHolder
 
-class HeaderAdapter : ListAdapter<String, HeaderViewHolder>(HeaderDiffUtil()) {
+class HeaderAdapter(
+	private var header: String
+) : RecyclerView.Adapter<HeaderViewHolder>() {
 
 	companion object {
 
@@ -16,19 +17,10 @@ class HeaderAdapter : ListAdapter<String, HeaderViewHolder>(HeaderDiffUtil()) {
 		HeaderViewHolder.from(parent)
 
 	override fun onBindViewHolder(holder: HeaderViewHolder, position: Int) {
-		holder.bind(getItem(position))
+		holder.bind(header)
 	}
 
-	override fun getItemViewType(position: Int): Int {
-		return VIEW_TYPE
-	}
+	override fun getItemViewType(position: Int): Int = VIEW_TYPE
 
-	private class HeaderDiffUtil : DiffUtil.ItemCallback<String>() {
-
-		override fun areItemsTheSame(oldItem: String, newItem: String) =
-			oldItem == newItem
-
-		override fun areContentsTheSame(oldItem: String, newItem: String) =
-			oldItem == newItem
-	}
+	override fun getItemCount(): Int = 1
 }

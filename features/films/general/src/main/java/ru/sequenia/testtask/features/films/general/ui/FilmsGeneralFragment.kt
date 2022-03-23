@@ -70,7 +70,6 @@ class FilmsGeneralFragment : BaseFragment<FilmsGeneralFragmentBinding>(), FilmsG
 		super.onViewCreated(view, savedInstanceState)
 
 		initAdapters()
-		setupHeaders()
 		initListeners()
 
 		presenter.onViewCreated(this)
@@ -84,8 +83,8 @@ class FilmsGeneralFragment : BaseFragment<FilmsGeneralFragmentBinding>(), FilmsG
 			SPAN_COUNT_LANDSCAPE
 		}
 
-		genresHeaderAdapter = HeaderAdapter()
-		filmsHeaderAdapter = HeaderAdapter()
+		genresHeaderAdapter = HeaderAdapter(resources.getString(R.string.genres_title))
+		filmsHeaderAdapter = HeaderAdapter(resources.getString(R.string.films_title))
 		genresAdapter = GenresAdapter(onClickAction = ::onGenreClickAction)
 		filmsAdapter = FilmsAdapter(
 			onClickAction = ::onFilmClickAction,
@@ -122,19 +121,6 @@ class FilmsGeneralFragment : BaseFragment<FilmsGeneralFragmentBinding>(), FilmsG
 			FilmItemDecorator(
 				spanCount = spanCount,
 				startOffset = resources.getDimensionPixelOffset(ru.sequenia.testtask.shared.themes.R.dimen.small_margin_padding)
-			)
-		)
-	}
-
-	private fun setupHeaders() {
-		genresHeaderAdapter.submitList(
-			listOf(
-				resources.getString(R.string.genres_title)
-			)
-		)
-		filmsHeaderAdapter.submitList(
-			listOf(
-				resources.getString(R.string.films_title)
 			)
 		)
 	}
