@@ -6,6 +6,7 @@ data class FilmRemoteModel(
 	val id: Long,
 	@Json(name = "localized_name")
 	val localizedName: String,
+	val name: String,
 	val year: Int,
 	val rating: Float?,
 	@Json(name = "image_url")

@@ -3,7 +3,6 @@ package ru.sequenia.testtask
 import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
-import ru.sequenia.testtask.di.appModule
 import ru.sequenia.testtask.di.globalNavigationModule
 import ru.sequenia.testtask.di.routersModule
 import ru.sequenia.testtask.features.films.general.di.filmsGeneralModule
