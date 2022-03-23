@@ -14,4 +14,29 @@
 		<item name="android:textSize">@dimen/description_text_size</item>
 		<item name="android:textColor">?attr/colorOnSurface</item>
 	</style>
+
+	<style name="Theme.Sequenia.AppBarTitle">
+		<item name="android:textSize">@dimen/appBarTitleTextSize</item>
+		<item name="android:textColor">?attr/colorOnPrimary</item>
+		<item name="android:textStyle">bold</item>
+		<item name="android:maxLines">1</item>
+		<item name="android:ellipsize">end</item>
+	</style>
+
+	<style name="Theme.Sequenia.BackButton"
+		parent="Widget.MaterialComponents.Button.TextButton">
+		<item name="icon">@drawable/ic_arrow_back</item>
+		<item name="iconGravity">start</item>
+		<item name="android:minWidth">@dimen/zero_size</item>
+		<item name="android:paddingTop">@dimen/medium_margin_padding</item>
+		<item name="android:paddingBottom">@dimen/medium_margin_padding</item>
+		<item name="android:layout_marginRight">@dimen/small_margin_padding</item>
+		<item name="cornerRadius">@dimen/large_corner_radius</item>
+		<item name="iconTint">?colorOnPrimary</item>
+		<item name="rippleColor">?colorOnPrimary</item>
+	</style>
+
+	<style name="Theme.Sequenia.RoundedImage">
+		<item name="cornerSize">@dimen/medium_corner_size</item>
+	</style>
 </resources>
