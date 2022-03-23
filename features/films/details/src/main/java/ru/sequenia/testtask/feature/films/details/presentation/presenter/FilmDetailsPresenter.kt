@@ -19,10 +19,12 @@ class FilmDetailsPresenter(
 	private val eventsDispatcher = EventsDispatcher<FilmDetailsContract.View>()
 	private lateinit var model: FilmDetailsContract.Model
 	private var wasInitialized = false
+	private var hasError = false
 
 	private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
 		Log.d(this::class.qualifiedName, throwable.message.toString())
 		eventsDispatcher.dispatchEvent { showError() }
+		hasError = true
 	}
 
 	override fun onViewCreated(view: FilmDetailsContract.View) {
@@ -30,10 +32,12 @@ class FilmDetailsPresenter(
 	}
 
 	override fun getFilmData(filmId: Long) {
-		if (!wasInitialized) {
+		if (!wasInitialized && !hasError) {
 			loadFilm(filmId)
-		} else {
+		} else if (!hasError && wasInitialized) {
 			getCachedFilmData()
+		} else if (hasError) {
+			eventsDispatcher.dispatchEvent { showError() }
 		}
 	}
 

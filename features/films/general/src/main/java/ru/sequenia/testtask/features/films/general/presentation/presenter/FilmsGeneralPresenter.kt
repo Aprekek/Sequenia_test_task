@@ -26,11 +26,13 @@ class FilmsGeneralPresenter(
 	private val eventsDispatcher = EventsDispatcher<FilmsGeneralContract.View>()
 	private val model: FilmsGeneralContract.Model = FilmsGeneralModel()
 	private var wasInitialized = false
+	private var hasError = false
 	private var filmsLoadingJob: Job? = null
 
 	private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
 		Log.d(this::class.qualifiedName, throwable.message.toString())
 		eventsDispatcher.dispatchEvent { showError() }
+		hasError = true
 	}
 
 	override fun onViewCreated(view: FilmsGeneralContract.View) {
@@ -40,10 +42,12 @@ class FilmsGeneralPresenter(
 	override fun loadFilmsData() {
 		eventsDispatcher.dispatchEvent { showLoading() }
 
-		if (wasInitialized) {
+		if (wasInitialized && !hasError) {
 			loadCachedFilms()
-		} else if (filmsLoadingJob == null) {
+		} else if (filmsLoadingJob == null && !hasError) {
 			filmsLoadingJob = loadFilmsFirstTime()
+		} else if (hasError) {
+			eventsDispatcher.dispatchEvent { showError() }
 		}
 	}
 
@@ -61,7 +65,9 @@ class FilmsGeneralPresenter(
 	}
 
 	override fun onReload() {
+		eventsDispatcher.dispatchEvent { showLoading() }
 		loadFilmsFirstTime()
+		hasError = false
 	}
 
 	override fun onFilmSelect(film: FilmAnnotation) {
