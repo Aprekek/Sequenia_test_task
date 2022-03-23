@@ -1,10 +1,10 @@
-package ru.sequenia.testtask.features.films.general.presentation.ui.adapters.decorators
+package ru.sequenia.testtask.features.films.general.ui.adapters.decorators
 
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.RecyclerView
-import ru.sequenia.testtask.features.films.general.presentation.ui.adapters.FilmsAdapter
+import ru.sequenia.testtask.features.films.general.ui.adapters.FilmsAdapter
 
 class FilmItemDecorator(
 	private val spanCount: Int,

@@ -1,4 +1,4 @@
-package ru.sequenia.testtask.features.films.general.presentation.ui.adapters.viewholders
+package ru.sequenia.testtask.features.films.general.ui.adapters.viewholders
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

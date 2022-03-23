@@ -1,4 +1,4 @@
-package ru.sequenia.testtask.features.films.general.presentation.ui
+package ru.sequenia.testtask.features.films.general.ui
 
 import android.content.res.Configuration
 import android.os.Bundle
@@ -23,10 +23,10 @@ import ru.sequenia.testtask.features.films.general.domain.entities.FilmAnnotatio
 import ru.sequenia.testtask.features.films.general.presentation.contracts.FilmsGeneralContract
 import ru.sequenia.testtask.features.films.general.presentation.model.GenreUiModel
 import ru.sequenia.testtask.features.films.general.presentation.presenter.FilmsGeneralPresenter
-import ru.sequenia.testtask.features.films.general.presentation.ui.adapters.FilmsAdapter
-import ru.sequenia.testtask.features.films.general.presentation.ui.adapters.GenresAdapter
-import ru.sequenia.testtask.features.films.general.presentation.ui.adapters.HeaderAdapter
-import ru.sequenia.testtask.features.films.general.presentation.ui.adapters.decorators.FilmItemDecorator
+import ru.sequenia.testtask.features.films.general.ui.adapters.FilmsAdapter
+import ru.sequenia.testtask.features.films.general.ui.adapters.GenresAdapter
+import ru.sequenia.testtask.features.films.general.ui.adapters.HeaderAdapter
+import ru.sequenia.testtask.features.films.general.ui.adapters.decorators.FilmItemDecorator
 import ru.sequenia.testtask.shared.core.presentation.dispatchers.EventsDispatcher
 import ru.sequenia.testtask.shared.core.presentation.fragments.BaseFragment
 
@@ -70,11 +70,10 @@ class FilmsGeneralFragment : BaseFragment<FilmsGeneralFragmentBinding>(), FilmsG
 		super.onViewCreated(view, savedInstanceState)
 
 		initAdapters()
-		setupHeaders()
 		initListeners()
 
 		presenter.onViewCreated(this)
-		presenter.loadFilmsData()
+		presenter.onInitialized()
 	}
 
 	private fun initAdapters() {
@@ -84,8 +83,8 @@ class FilmsGeneralFragment : BaseFragment<FilmsGeneralFragmentBinding>(), FilmsG
 			SPAN_COUNT_LANDSCAPE
 		}
 
-		genresHeaderAdapter = HeaderAdapter()
-		filmsHeaderAdapter = HeaderAdapter()
+		genresHeaderAdapter = HeaderAdapter(resources.getString(R.string.genres_title))
+		filmsHeaderAdapter = HeaderAdapter(resources.getString(R.string.films_title))
 		genresAdapter = GenresAdapter(onClickAction = ::onGenreClickAction)
 		filmsAdapter = FilmsAdapter(
 			onClickAction = ::onFilmClickAction,
@@ -122,19 +121,6 @@ class FilmsGeneralFragment : BaseFragment<FilmsGeneralFragmentBinding>(), FilmsG
 			FilmItemDecorator(
 				spanCount = spanCount,
 				startOffset = resources.getDimensionPixelOffset(ru.sequenia.testtask.shared.themes.R.dimen.small_margin_padding)
-			)
-		)
-	}
-
-	private fun setupHeaders() {
-		genresHeaderAdapter.submitList(
-			listOf(
-				resources.getString(R.string.genres_title)
-			)
-		)
-		filmsHeaderAdapter.submitList(
-			listOf(
-				resources.getString(R.string.films_title)
 			)
 		)
 	}

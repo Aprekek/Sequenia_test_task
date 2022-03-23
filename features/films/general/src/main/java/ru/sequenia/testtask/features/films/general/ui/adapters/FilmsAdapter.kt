@@ -1,11 +1,11 @@
-package ru.sequenia.testtask.features.films.general.presentation.ui.adapters
+package ru.sequenia.testtask.features.films.general.ui.adapters
 
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import ru.sequenia.testtask.features.films.general.domain.entities.FilmAnnotation
-import ru.sequenia.testtask.features.films.general.presentation.ui.adapters.viewholders.FilmViewHolder
+import ru.sequenia.testtask.features.films.general.ui.adapters.viewholders.FilmViewHolder
 
 class FilmsAdapter(
 	private val onClickAction: (film: FilmAnnotation) -> Unit,

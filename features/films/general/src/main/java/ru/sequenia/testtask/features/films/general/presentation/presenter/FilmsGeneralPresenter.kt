@@ -39,7 +39,7 @@ class FilmsGeneralPresenter(
 		view.bind(eventsDispatcher)
 	}
 
-	override fun loadFilmsData() {
+	override fun onInitialized() {
 		eventsDispatcher.dispatchEvent { showLoading() }
 
 		if (wasInitialized && !hasError) {
