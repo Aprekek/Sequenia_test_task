@@ -46,7 +46,7 @@
 				android:layout_marginTop="@dimen/medium_margin_padding"
 				android:clickable="true"
 				android:focusable="true"
-				android:textColor="@color/blue"
+				android:textColor="?attr/colorPrimary"
 				android:text="@string/retry"
 				style="@style/Theme.Sequenia.DescriptionText"/>
 		</LinearLayout>
