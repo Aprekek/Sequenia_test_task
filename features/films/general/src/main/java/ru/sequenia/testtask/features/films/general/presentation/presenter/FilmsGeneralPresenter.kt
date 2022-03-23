@@ -33,10 +33,11 @@ class FilmsGeneralPresenter(
 
 	override fun onViewCreated(view: FilmsGeneralContract.View) {
 		view.bind(eventsDispatcher)
+	}
 
+	override fun loadFilmsData() {
 		if (!wasInitialized) {
 			loadFilmsFirstTime()
-			wasInitialized = true
 		} else {
 			loadCachedFilms()
 		}
@@ -50,6 +51,7 @@ class FilmsGeneralPresenter(
 			model.films = getFilmsUseCase(model.genreFilter)
 			model.genres = getGenresUseCase().toUiModelList()
 
+			wasInitialized = true
 			eventsDispatcher.dispatchEvent { showContent(model.genres, model.films) }
 		}
 	}

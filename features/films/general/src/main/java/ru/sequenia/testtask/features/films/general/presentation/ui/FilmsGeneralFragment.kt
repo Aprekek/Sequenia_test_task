@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearSmoothScroller
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -71,7 +72,9 @@ class FilmsGeneralFragment : BaseFragment<FilmsGeneralFragmentBinding>(), FilmsG
 		initAdapters()
 		setupHeaders()
 		initListeners()
+
 		presenter.onViewCreated(this)
+		presenter.loadFilmsData()
 	}
 
 	private fun initAdapters() {
@@ -157,6 +160,7 @@ class FilmsGeneralFragment : BaseFragment<FilmsGeneralFragmentBinding>(), FilmsG
 			Glide.with(this)
 				.load(url)
 				.centerCrop()
+				.diskCacheStrategy(DiskCacheStrategy.ALL)
 				.placeholder(ru.sequenia.testtask.shared.themes.R.drawable.ic_movie)
 				.into(view)
 		} else {
