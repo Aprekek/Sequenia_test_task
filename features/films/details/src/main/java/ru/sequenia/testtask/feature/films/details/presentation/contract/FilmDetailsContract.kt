@@ -14,7 +14,7 @@ interface FilmDetailsContract : BaseContract {
 
 	interface Presenter : BaseContract.Presenter<FilmDetailsContract.View> {
 
-		fun getFilmData(filmId: Long)
+		fun onInitialized(filmId: Long)
 		fun onExit()
 	}
 

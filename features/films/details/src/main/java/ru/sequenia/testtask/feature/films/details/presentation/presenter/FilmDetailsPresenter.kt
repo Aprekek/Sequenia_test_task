@@ -31,7 +31,7 @@ class FilmDetailsPresenter(
 		view.bind(eventsDispatcher)
 	}
 
-	override fun getFilmData(filmId: Long) {
+	override fun onInitialized(filmId: Long) {
 		if (!wasInitialized && !hasError) {
 			loadFilm(filmId)
 		} else if (!hasError && wasInitialized) {

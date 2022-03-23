@@ -44,7 +44,7 @@ class FilmDetailsFragment : BaseFragment<FilmDetailsFragmentBinding>(), FilmDeta
 		initListeners()
 
 		presenter.onViewCreated(this)
-		presenter.getFilmData(requireArguments().filmIdArg)
+		presenter.onInitialized(requireArguments().filmIdArg)
 	}
 
 	private fun initListeners() {
