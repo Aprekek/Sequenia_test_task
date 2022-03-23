@@ -159,7 +159,6 @@ class FilmsGeneralFragment : BaseFragment<FilmsGeneralFragmentBinding>(), FilmsG
 		if (url != null) {
 			Glide.with(this)
 				.load(url)
-				.centerCrop()
 				.diskCacheStrategy(DiskCacheStrategy.ALL)
 				.placeholder(ru.sequenia.testtask.shared.themes.R.drawable.ic_movie)
 				.into(view)
