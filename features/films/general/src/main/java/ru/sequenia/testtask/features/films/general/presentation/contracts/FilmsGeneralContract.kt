@@ -15,7 +15,7 @@ interface FilmsGeneralContract : BaseContract {
 
 	interface Presenter : BaseContract.Presenter<FilmsGeneralContract.View> {
 
-		fun loadFilmsData()
+		fun onInitialized()
 		fun onReload()
 		fun onFilmSelect(film: FilmAnnotation)
 		fun onGenreFilterSelect(genreFilter: Long)

@@ -73,7 +73,7 @@ class FilmsGeneralFragment : BaseFragment<FilmsGeneralFragmentBinding>(), FilmsG
 		initListeners()
 
 		presenter.onViewCreated(this)
-		presenter.loadFilmsData()
+		presenter.onInitialized()
 	}
 
 	private fun initAdapters() {
