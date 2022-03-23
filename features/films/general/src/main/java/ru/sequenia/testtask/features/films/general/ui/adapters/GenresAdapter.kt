@@ -1,10 +1,10 @@
-package ru.sequenia.testtask.features.films.general.presentation.ui.adapters
+package ru.sequenia.testtask.features.films.general.ui.adapters
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import ru.sequenia.testtask.features.films.general.presentation.model.GenreUiModel
-import ru.sequenia.testtask.features.films.general.presentation.ui.adapters.viewholders.GenreViewHolder
+import ru.sequenia.testtask.features.films.general.ui.adapters.viewholders.GenreViewHolder
 
 class GenresAdapter(
 	private val onClickAction: (Long) -> Unit

@@ -1,9 +1,9 @@
-package ru.sequenia.testtask.features.films.general.presentation.ui.adapters
+package ru.sequenia.testtask.features.films.general.ui.adapters
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import ru.sequenia.testtask.features.films.general.presentation.ui.adapters.viewholders.HeaderViewHolder
+import ru.sequenia.testtask.features.films.general.ui.adapters.viewholders.HeaderViewHolder
 
 class HeaderAdapter : ListAdapter<String, HeaderViewHolder>(HeaderDiffUtil()) {
 

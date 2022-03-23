@@ -1,4 +1,4 @@
-package ru.sequenia.testtask.features.films.general.presentation.ui.adapters.viewholders
+package ru.sequenia.testtask.features.films.general.ui.adapters.viewholders
 
 import android.content.Context
 import android.util.TypedValue

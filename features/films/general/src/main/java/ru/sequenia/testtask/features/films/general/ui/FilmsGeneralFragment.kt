@@ -1,4 +1,4 @@
-package ru.sequenia.testtask.features.films.general.presentation.ui
+package ru.sequenia.testtask.features.films.general.ui
 
 import android.content.res.Configuration
 import android.os.Bundle
@@ -23,10 +23,10 @@ import ru.sequenia.testtask.features.films.general.domain.entities.FilmAnnotatio
 import ru.sequenia.testtask.features.films.general.presentation.contracts.FilmsGeneralContract
 import ru.sequenia.testtask.features.films.general.presentation.model.GenreUiModel
 import ru.sequenia.testtask.features.films.general.presentation.presenter.FilmsGeneralPresenter
-import ru.sequenia.testtask.features.films.general.presentation.ui.adapters.FilmsAdapter
-import ru.sequenia.testtask.features.films.general.presentation.ui.adapters.GenresAdapter
-import ru.sequenia.testtask.features.films.general.presentation.ui.adapters.HeaderAdapter
-import ru.sequenia.testtask.features.films.general.presentation.ui.adapters.decorators.FilmItemDecorator
+import ru.sequenia.testtask.features.films.general.ui.adapters.FilmsAdapter
+import ru.sequenia.testtask.features.films.general.ui.adapters.GenresAdapter
+import ru.sequenia.testtask.features.films.general.ui.adapters.HeaderAdapter
+import ru.sequenia.testtask.features.films.general.ui.adapters.decorators.FilmItemDecorator
 import ru.sequenia.testtask.shared.core.presentation.dispatchers.EventsDispatcher
 import ru.sequenia.testtask.shared.core.presentation.fragments.BaseFragment
 
